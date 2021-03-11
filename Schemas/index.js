@@ -27,6 +27,7 @@ const RootQuery = new GraphQLObjectType({
 const Mutation = new GraphQLObjectType({
     name: "Mutation",
     fields: {
+        //these are the functions you use in the useMutation() react hook... 
         createUser: {
             type: UserType,
             args: {
@@ -38,7 +39,7 @@ const Mutation = new GraphQLObjectType({
             resolve(parents, args) { //database login to insert to dbase...                
                 userData.push({
                     id: userData.length + 1,
-                    firstname: args.firstName,
+                    firstName: args.firstName,
                     lastName: args.lastName,
                     email: args.email,
                     password: args.password
@@ -46,6 +47,8 @@ const Mutation = new GraphQLObjectType({
                 return args
             }
         }
+
+        //another type of mutation here... 
     }
 })
 
